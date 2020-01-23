@@ -13,9 +13,9 @@ namespace EcommerceProject
     {
         private readonly EcommerceProject.Models.TestEcommerceContext _context;
 
-        public DetailsModel()
+        public DetailsModel(TestEcommerceContext context)
         {
-            _context = new TestEcommerceContext();
+            _context = context;
         }
 
         public Product Product { get; set; }

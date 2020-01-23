@@ -13,9 +13,9 @@ namespace EcommerceProject
     {
         private readonly EcommerceProject.Models.TestEcommerceContext _context;
 
-        public DeleteModel()
+        public DeleteModel(TestEcommerceContext context)
         {
-            _context = new TestEcommerceContext();
+            _context = context;
         }
 
         [BindProperty]
@@ -44,12 +44,14 @@ namespace EcommerceProject
             {
                 return NotFound();
             }
-
+                       
             Product = await _context.Product.FindAsync(id);
 
             if (Product != null)
             {
                 _context.Product.Remove(Product);
+                _context.Product.Add(new Product { Name = "Nokia" });
+
                 await _context.SaveChangesAsync();
             }
 

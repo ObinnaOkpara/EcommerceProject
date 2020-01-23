@@ -13,9 +13,9 @@ namespace EcommerceProject.Pages.Admin.Product
     {
         private readonly EcommerceProject.Models.TestEcommerceContext _context;
 
-        public CreateModel()
+        public CreateModel(TestEcommerceContext context)
         {
-            _context = new TestEcommerceContext();
+            _context = context;
         }
 
         public IActionResult OnGet()

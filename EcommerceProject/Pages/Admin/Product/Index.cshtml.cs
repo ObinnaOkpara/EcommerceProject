@@ -13,9 +13,9 @@ namespace EcommerceProject
     {
         private readonly EcommerceProject.Models.TestEcommerceContext _context;
 
-        public IndexModel()
+        public IndexModel(TestEcommerceContext context)
         {
-            _context = new TestEcommerceContext();
+            _context = context;
         }
 
         public IList<Product> Product { get;set; }

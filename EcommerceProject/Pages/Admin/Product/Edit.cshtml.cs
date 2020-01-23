@@ -12,11 +12,11 @@ namespace EcommerceProject
 {
     public class EditModel : PageModel
     {
-        private readonly EcommerceProject.Models.TestEcommerceContext _context;
+        private readonly TestEcommerceContext _context;
 
-        public EditModel()
+        public EditModel(TestEcommerceContext context)
         {
-            _context = new TestEcommerceContext();
+            _context = context;
         }
 
         [BindProperty]
